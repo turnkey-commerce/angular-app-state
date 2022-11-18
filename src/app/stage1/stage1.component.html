@@ -1,0 +1,18 @@
+<h1>Stage 1</h1>
+
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="projectName">
+        Project Name
+      </label>
+      <input id="projectName" type="text" formControlName="projectName" [(ngModel)]="projectName">
+    </div>
+  
+    <button [disabled]="projectName === ''" class="button" type="submit">Save</button>
+  
+  </form>
+
+<div>
+  <button class="button" [disabled] = "!canNavigate" (click)="nextStage()">Next Stage >>></button>
+</div>
